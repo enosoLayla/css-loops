@@ -1,0 +1,34 @@
+$course-appointment-status:(
+    'draft' : #F9AC38,
+    'ready' : #D1DADE,
+    'active' : #2199da,
+    'finished' : #ced72f,
+    'completed' : #45d545,
+    'canceled' : #b8373d
+);
+
+
+
+@mixin background-color($variable, $color){
+    background-color: $color;
+    color: var(--contrast-#{$variable}) !important;
+} 
+
+@mixin button($variable, $color){
+    @include background-color($variable, $color);
+    border-color: darken($color, 0.2);
+}
+
+@each $variable, $color in $course-appointment-status {
+    button{
+        &.btn-#{$variable} {
+            @include button($variable, $color);
+        }
+    };
+
+    span{
+        &.badge.bg-#{$variable}{
+            @include background-color($variable, $color)
+        }
+    }
+};

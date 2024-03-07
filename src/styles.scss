@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --contrast-draft: black;
+    --contrast-ready: black;
+    --contrast-active: black;
+    --contrast-finished: black;
+    --contrast-completed: black;
+    --contrast-canceled: white;
+}
